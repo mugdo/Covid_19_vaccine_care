@@ -14,4 +14,5 @@ class User(mongoengine.Document):
                 "father": self.father,
                 "mother" : self.mother,
                 "blood_group" : self.blood_group,
-                "address": self.address}
+                "address": self.address
+                }
