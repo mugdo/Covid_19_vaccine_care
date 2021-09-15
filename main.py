@@ -44,19 +44,20 @@ def get_user():
     date = _json['date']
     print("date := ",date)
 
-    users = service.verfy_user_date(_json)
-    return users
+    users = service.serch_usr_by_date(date)
+    print("Number of user : ",len(users))
+    return jsonify(users)
 
 
 if __name__ == "__main__":
     app.run(debug=True)
 
-user = user_class.User(
-        nid ="2910",
-        name="lisu",
-        father="alku",
-        mother = "isbul",
-        blood_group = "k+",
-        address = "ankara")      
+# user = user_class.User(
+#         nid ="2910",
+#         name="lisu",
+#         father="alku",
+#         mother = "isbul",
+#         blood_group = "k+",
+#         address = "ankara")      
 # user.save()
     

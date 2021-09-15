@@ -2,14 +2,11 @@ from datetime import datetime, timedelta
 from model import register_class, user_class
 def verfy_user(json_value):
 
-    if  json_value.get("nid"):
+    if  json_value.get("nid") and json_value.get("center"):
        return True
 
-    if  json_value.get("center"):
-       return True
-  
-    return False
-
+    else:
+        return True
 
 def verfy_user_date(json_value):
 
@@ -74,8 +71,20 @@ def return_err_message(jsonify):
 
 
 
-def serch_usr_by_date(_json):
-   return  register_class.Register.objects(date = _json['date'] )
+def serch_usr_by_date(date):
+   user_array = []
+   users =register_class.Register.objects(reg_date=date)
+   for user in users:
+       temp = {
+           "nid" : user['nid'],
+           "center" : user['center'],
+           "reg_date" : user['reg_date']
+       }
+       print(temp)
+       user_array.append(temp)
+    
+   return user_array
+      
         
 
 
