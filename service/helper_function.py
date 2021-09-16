@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from model import register_class, user_class
+from model import user as data
 def verfy_user(json_value):
 
     if  json_value.get("nid") and json_value.get("center"):
@@ -32,7 +32,7 @@ def serch_date(_json):
     flag = True
     res = today
     while(flag):
-        user= register_class.Register.objects(reg_date=res,center = _json['center'])
+        user= data.Register.objects(reg_date=res,center = _json['center'])
         if user_count(user) <=2 :
             return  res
             flag = False
@@ -47,9 +47,9 @@ def not_found(jsonify):
     resp.status_code= 404
     return resp
 def register_user(_json, date, jsonify):
-    if user_class.User.objects(nid = _json['nid'] ).first():
-        if not register_class.Register.objects(nid = _json['nid'] ).first() :
-            reg =register_class.Register(nid =_json['nid'],
+    if data.User.objects(nid = _json['nid'] ).first():
+        if not data.Register.objects(nid = _json['nid'] ).first() :
+            reg =data.Register(nid =_json['nid'],
             center = _json['center'] ,reg_date= date)
             reg.save()
             resp = jsonify("Registation succesfully")
@@ -73,7 +73,7 @@ def return_err_message(jsonify):
 
 def serch_usr_by_date(date):
    user_array = []
-   users =register_class.Register.objects(reg_date=date)
+   users =data.Register.objects(reg_date=date)
    for user in users:
        temp = {
            "nid" : user['nid'],
