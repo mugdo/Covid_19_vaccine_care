@@ -1,9 +1,8 @@
 from flask import Flask
+from  service.vew import user_blueprint
 
 
 app = Flask('__name__')
 app.debug=True
 
-
-from service.vaccin_care import blueprint
-app.register_blueprint(blueprint)
+app.register_blueprint(user_blueprint)
