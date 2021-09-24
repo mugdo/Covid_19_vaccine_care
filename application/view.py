@@ -1,9 +1,9 @@
-from os import error
 from flask import  request, jsonify
 from flask.views import MethodView
-from .router import db,Reg,RegSchema,GetSchema
-from datetime import  datetime, timedelta
 from marshmallow import ValidationError
+from flask_restful import Resource
+from datetime import  datetime, timedelta
+from .router import db,Reg,RegSchema,GetSchema
 
 
 
@@ -43,7 +43,7 @@ class Register(MethodView):
             schema = RegSchema()
             result = schema.load(json_requsest)
             date = get_avalable_date(json_requsest['date'])
-            data = Reg(json_requsest['nid'],json_requsest['center'],date)
+            data = Reg(result.nid,result.center,date)
             db.create_all()
             db.session.add(data)
             db.session.commit()
@@ -64,16 +64,15 @@ class Register(MethodView):
         date = _json['date']
         user_array =[]
         user_data = Reg.query.filter_by(date = date)
-        for user in user_data:
-            post_schema = GetSchema()
-            # conver simple data
-            Schema = post_schema.dump(user) 
-            user_array.append(Schema)
-       
+        # for user in user_data:
+        post_schema = GetSchema(many=True)
+        Schema = post_schema.dump(user_data) 
+        user_array.append(Schema)
+    
         message  = {
             'date': date,
             'status': 200,
-            'data ': user_array
+            'data ': Schema
         }
         resp = jsonify(message)
         resp.status_code= 200
