@@ -16,8 +16,8 @@ with APP.app_context():
 
     db.init_app(APP)
     db.create_all()
-    push_user_data()
-    push_rigister_data()
+    # push_user_data()
+    # push_rigister_data()
     db.session.commit()
 
 if __name__ == "__main__":
