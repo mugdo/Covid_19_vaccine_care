@@ -1,0 +1,122 @@
+
+[   
+    {
+        "nid" : 69058292,
+        "name" : "lipu bpkla",
+        "father" : "likhil jamsed",
+        "mother" : "Ikril Begum",
+        "date_of_barth" : "05/05/97",
+        "blood_group" : "B+",
+        "address" : "5999/2,Dhaka-1216"
+    },
+
+    {
+        "nid" : 69058292,
+        "name" : "alblu",
+        "father" : "kamrujam",
+        "mother" : "lotifa",
+        "date_of_barth" : "09/10/96",
+        "blood_group" : "AB+",
+        "address" : "192,Dhaka-1219"
+    },
+
+    { 
+        "nid" : 6905829,
+        "name" : "Robul Islam",
+        "father" : "abdul motalab",
+        "mother" : "Riba Begum",
+        "date_of_barth" : "09/09/95",
+        "blood_group" : "A+",
+        "address" : "500/2,Dhaka-1216"
+    },
+
+    {
+        "nid" : 79058292,
+        "name" : "Laksur babu",
+        "father" : "abdul motalab",
+        "mother" : "Tikki Rani",
+        "date_of_barth" : "09/01/2000",
+        "blood_group" : "O+",
+        "address" : "103,Dhaka-1216"
+    },
+
+    {
+        "nid" : 79058292,
+        "name" : "Keram Mia",
+        "father" : "Joynal Mia",
+        "mother" : "silpi afroj",
+        "date_of_barth" : "01/01/2000",
+        "blood_group" : "O-",
+        "address" : "102,Dhaka-1216"
+    },
+
+    {
+        "nid" : 79058292,
+        "name" : "Toffezlel Rohaman",
+        "father" : "Taimur Khodokar",
+        "mother" : "Tiri Akter",
+        "date_of_barth" : "01/04/2000",
+        "blood_group" : "B-",
+        "address" : "102,Dhaka-1210"
+    },
+
+    {
+        "nid" : 79058292,
+        "name" : "Torikul Redoy",
+        "father" : "Livik Pruka",
+        "mother" : "Thari Begum",
+        "date_of_barth" : "02/01/2001",
+        "blood_group" : "AB-",
+        "address" : "106,Dhaka-1216"
+    },
+
+    {
+        "nid" : 79058292,
+        "name" : "Tusor Howlader",
+        "father" : "Jabur Howlader",
+        "mother" : "Cat Roji",
+        "date_of_barth" : "05/03/2004",
+        "blood_group" : "O+",
+        "address" : "102,Dhaka-1210"
+    },
+
+    {
+        "nid" : 79058292,
+        "name" : "Rakabul Islam",
+        "father" : "Lotifur Roham",
+        "mother" : "Ssilpa Rani",
+        "date_of_barth" : "06/07/2005",
+        "blood_group" : "O-",
+        "address" : "102,Dhaka-1217"
+    },
+
+    {
+        "nid" : 99058292,
+        "name" : "Toybur Rohaman",
+        "father" : "Joynal Mia",
+        "mother" : "Silpi Afroj",
+        "date_of_barth" : "01/01/2000",
+        "blood_group" : "O-",
+        "address" : "102,Dhaka-1216"
+    },
+
+    {
+        "nid" : 99058794,
+        "name" : "Lotb Mia",
+        "father" : "Joynal Mia",
+        "mother" : "silpi afroj",
+        "date_of_barth" : "01/01/2000",
+        "blood_group" : "O-",
+        "address" : "102,Dhaka-1216"
+    },
+
+    {
+        "nid" : 10058732,
+        "name" : "jibon Rohaman",
+        "father" : "Likhon Chowdury",
+        "mother" : "Lipi afroj",
+        "date_of_barth" : "07/01/2000",
+        "blood_group" : "O-",
+        "address" : "10,Dhaka-1209"
+    }
+]
