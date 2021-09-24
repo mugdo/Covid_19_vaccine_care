@@ -1,5 +1,4 @@
 from flask import  request, jsonify
-from flask.views import MethodView
 from marshmallow import ValidationError
 from flask_restful import Resource
 from datetime import  datetime, timedelta
@@ -36,7 +35,7 @@ def return_response():
     return resp
 
 
-class Register(MethodView):
+class Register(Resource):
     def post(self):
         json_requsest = request.get_json()
         try:
