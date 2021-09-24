@@ -14,8 +14,6 @@ def push_user_data():
         blood_group = dat['blood_group']
         address = dat['address']
         data = User(nid,name,father,mother,date_of_barth,blood_group,address)
-        print(data.nid)
-        db.create_all()
         db.session.add(data)
         db.session.commit()
 def push_rigister_data():
@@ -23,7 +21,6 @@ def push_rigister_data():
         center = "fake"
         date= "1/1/2"
         data = Reg(nid,center,date)
-        db.create_all()
         db.session.add(data)
         db.session.commit()
     
