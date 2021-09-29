@@ -3,8 +3,7 @@ from marshmallow.exceptions import ValidationError
 from .router import db
 from marshmallow import Schema, fields, post_load, validates,validate
 from datetime import  datetime, timedelta
-
-
+from flask_login import UserMixin, LoginManager
 
 class Reg(db.Model):
     __tablename__ = 'register'
@@ -70,6 +69,29 @@ class GetSchema(Schema):
 # class PostSchema(ma.Schema):
 #     class Meta:
 #         fields = ("nid", "center", "date")
+
+login_manager = LoginManager()
+class Loger(UserMixin,db.Model):
+    id =db.Column(db.Integer, primary_key = True)
+    username = db.Column(db.String(20))
+
+    def __init__(self,id, username):
+        self.nid = id
+        self.username = username
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Loger.query.get(int(user_id)).first()
+
+
+
+
+
+class LogerSchema(Schema):
+    nid = fields.Integer()
+    username = fields.String()
+
+
 
 
 

@@ -1,5 +1,5 @@
 from os import error
-from application import db, Reg
+from application import db, Reg, Loger
 from application import User
 from read import obbejct
 
@@ -23,5 +23,15 @@ def push_rigister_data():
         data = Reg(nid,center,date)
         db.session.add(data)
         db.session.commit()
+
+
+def push_loger_data():
+        for dat in obbejct:
+                name = dat['name']
+                nid = dat['nid']
+                data = Loger(nid,name)
+                db.session.add(data)
+                db.session.commit()
+    
     
 

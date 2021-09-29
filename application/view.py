@@ -2,8 +2,8 @@ from flask import  request, jsonify
 from marshmallow import ValidationError
 from flask_restful import Resource
 from datetime import  datetime, timedelta
-from .router import db,Reg,RegSchema,GetSchema
-
+from .router import db,Reg,RegSchema,GetSchema, Loger
+from flask_login import LoginManager, login_user, login_required
 
 
 def get_avalable_date(date):
@@ -34,7 +34,6 @@ def return_response():
     resp.status_code= 200
     return resp
 
-
 class Register(Resource):
     def post(self):
         json_requsest = request.get_json()
@@ -55,10 +54,7 @@ class Register(Resource):
             resp = jsonify(message)
             resp.status_code= 500
             return resp
-            
-
     def get(self):
-
         _json = request.json
         date = _json['date']
         user_array =[]
@@ -76,6 +72,26 @@ class Register(Resource):
         resp = jsonify(message)
         resp.status_code= 200
         return resp
+class Login(Resource):
+    def post(self):
+        _json = request.json
+        username = _json['username']
+        user = Loger.query.filter_by(username=username).first()
+        print(user)
+        login_user(user)
+        message  = {
+            'usernaem': username,
+            'status': 200,
+            }
+        resp = jsonify(message)
+        resp.status_code= 200
+        return resp
+
+
+
+            
+
+
     
 
         
