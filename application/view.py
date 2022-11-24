@@ -86,23 +86,3 @@ class Login(Resource):
         resp = jsonify(message)
         resp.status_code= 200
         return resp
-
-
-
-            
-
-
-    
-
-        
-
-
-
-    
-
-        
-    
-
-
-
- 
