@@ -83,26 +83,6 @@ class Loger(UserMixin,db.Model):
 def load_user(user_id):
     return Loger.query.get(int(user_id)).first()
 
-
-
-
-
 class LogerSchema(Schema):
     nid = fields.Integer()
     username = fields.String()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
